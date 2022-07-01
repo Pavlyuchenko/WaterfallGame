@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+
+		<link rel="stylesheet" href="/styles.css" />
+
+		<title>Waterfall - drinking game</title>
+
+		<script src="scripts/classes.js"></script>
+		<script src="scripts/setup.js"></script>
+		<script src="scripts/game.js"></script>
+		<script src="scripts/settings.js"></script>
+
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Crete+Round&display=swap");
+		</style>
+	</head>
+	<body id="body">
+		<div id="deck">
+			<div id="non-clickable-bg"></div>
+			<button id="start-button" class="button" onclick="startGame();">
+				Start
+			</button>
+			<button id="restart" class="button" onclick="restart();">
+				Restart
+			</button>
+			<!-- <button id="next" class="button" onclick="showNextCard()">
+				Next
+			</button> -->
+		</div>
+		<hr />
+		<div id="rules">
+			<h2>Rules</h2>
+			<section>
+				<div class="card-rule">
+					<img src="/assets/A_spades.svg" alt="Ace" />
+					<div>
+						<h3>Waterfall</h3>
+						<p>
+							Once an ace is drawn, everyone starts to drink. The
+							player who picked the card can stop whenever he/she
+							wants, but others have to keep drinking. Once he/she
+							decides to stop, the player on his/her right can
+							stop and so on. The last player in the ring has to
+							finish last.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/2_clubs.svg" alt="2" />
+					<div>
+						<h3>Give 2</h3>
+						<p>The player can make another player take two sips.</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/3_hearts.svg" alt="3" />
+					<div>
+						<h3>Drink 3</h3>
+						<p>
+							The player who picks this card has to drink 3 sips.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/4_diamonds.svg" alt="4" />
+					<div>
+						<h3>Girls drink</h3>
+						<p>All the girls in the game have to drink!</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/5_spades.svg" alt="5" />
+					<div>
+						<h3>Bust a jive</h3>
+						<p>
+							The person who picks the card has to come up with a
+							dance move. The next person has to do that dance
+							move and add to it. This continues until someone
+							makes a mistake and has to drink.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/6_clubs.svg" alt="6" />
+					<div>
+						<h3>Guys drink</h3>
+						<p>All the guys in the game have to drink!</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/7_hearts.svg" alt="7" />
+					<div>
+						<h3>Heaven</h3>
+						<p>
+							All players reach for the sky. The last person to do
+							so has to drink.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/8_diamonds.svg" alt="8" />
+					<div>
+						<h3>Mate</h3>
+						<p>
+							The player who picks the card chooses another player
+							to be their mate. This means when one of them drinks
+							they both drink.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/9_spades.svg" alt="9" />
+					<div>
+						<h3>Bust a Rhyme</h3>
+						<p>
+							The player who picks this card says a word and all
+							the players after him/her has to say a word that
+							rhymes with this word. First one to not come up with
+							a word has to drink.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/10_clubs.svg" alt="10" />
+					<div>
+						<h3>Categories</h3>
+						<p>
+							The player who picked the card chooses a category.
+							Then everyone goes around and says something that
+							fits in the chosen category. Whoever cannot think of
+							anything in the category has to drink. Good
+							categories to use include types of liquor, car
+							companies, and types of cereal.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/J_hearts.svg" alt="J" />
+					<div>
+						<h3>Thumb</h3>
+						<p>
+							Drawing a Jack makes you the Thumb Master. Whenever
+							you choose you can put your thumb on the table
+							causing all players to race to do the same. Last
+							player to do so has to drink. You remain Thumb
+							Master until a new Jack is drawn.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/Q_diamonds.svg" alt="Q" />
+					<div>
+						<h3>Question</h3>
+						<p>
+							Ask a question from any other player, who must in
+							turn ask a different player a question. Whoever
+							doesn’t answer with a question has to drink, and you
+							can’t ask a question back to the person who last
+							asked you.
+						</p>
+					</div>
+				</div>
+				<div class="card-rule">
+					<img src="/assets/K_spades.svg" alt="K" />
+					<div>
+						<h3>New rule</h3>
+						<p>
+							The player who picks a King gets to create a new
+							rule for the game. If the rule is not followed the
+							person who broke the rule has to drink. A good rule
+							is to for example only be allowed to hold the drink
+							in your left hand.
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
