@@ -66,7 +66,7 @@ class Deck {
 		let card = document.createElement("img");
 		card.id = "card" + index;
 		card.className = "card back";
-		card.src = "assets/cardBack.svg";
+		card.src = "./assets/cardBack.svg";
 		card.alt = this.deck[index].title;
 		card.style =
 			"transform: rotateZ(" +
