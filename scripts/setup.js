@@ -86,11 +86,17 @@ var discard = [
 	false,
 	false,
 ];
-var deck, DOMDeck;
+var deck, DOMDeck, wait;
 
 window.addEventListener("load", () => {
 	instantiateDeck();
 	setupFirstCard();
+
+	document.getElementById("start-button").style.display = "block";
+	document.getElementById("title").style.display = "block";
+	document.getElementById("rules-button").style.display = "block";
+
+	preload(deck.deck);
 });
 
 function instantiateDeck() {
@@ -99,9 +105,15 @@ function instantiateDeck() {
 }
 
 function setupFirstCard() {
-	document
-		.getElementById("container0")
-		.addEventListener("click", showNextCard);
+	document.getElementById("container0").addEventListener("click", () => {
+		if (!wait) {
+			showNextCard();
+			wait = true;
+			setTimeout(() => {
+				wait = false;
+			}, 500);
+		}
+	});
 	createCardTop(0);
 
 	createCardTop(1);
@@ -153,4 +165,16 @@ function createCardTop(index) {
 		";";
 
 	nextContainer.appendChild(card);
+}
+
+var images = [];
+function preload() {
+	let img = new Image();
+	img.src = "/assets/CardBack.png";
+	images.push(img);
+	for (const crd of deck.deck) {
+		let img = new Image();
+		img.src = "/assets/" + crd.image;
+		images.push(img);
+	}
 }

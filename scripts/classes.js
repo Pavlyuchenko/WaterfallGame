@@ -35,7 +35,7 @@ class Deck {
 		/*
 			The structure of each card looks like this:
 				<div class='container' id='container#'>
-					<img class='card front' id='card#' src='assets/cardBack.svg' />
+					<img class='card front' id='card#' src='assets/cardBack.png' />
 				</div>
 
 			For performace concerns, only the back of the card is loaded.
@@ -43,7 +43,7 @@ class Deck {
 			Ex.: Right now, we see a card. Once the user clicks it, the next card is shown with animation, and the front of the next next card is inserted into the DOM.
 			Now the structure is like this:
 				<div class='container' id='container#'>
-					<img class='card front' id='card#' src='assets/cardBack.svg' />
+					<img class='card front' id='card#' src='assets/cardBack.png' />
 					<img class='card back' id='cardFront#' src='assets/---.svg' />
 				</div>
 
@@ -66,7 +66,7 @@ class Deck {
 		let card = document.createElement("img");
 		card.id = "card" + index;
 		card.className = "card back";
-		card.src = "assets/CardBack.svg";
+		card.src = "assets/CardBack.png";
 		card.alt = this.deck[index].title;
 		card.style =
 			"transform: rotateZ(" +

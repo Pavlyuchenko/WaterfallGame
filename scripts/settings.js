@@ -1,5 +1,7 @@
 function startGame() {
 	document.getElementById("start-button").style.display = "none";
+	document.getElementById("rules-button").style.display = "none";
+	document.getElementById("title").style.display = "none";
 	document.getElementById("non-clickable-bg").style.display = "none";
 	//document.getElementById("next").style.display = "block";
 

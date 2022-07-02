@@ -43,18 +43,30 @@ function flipCard(index) {
 	let front = document.getElementById("cardFront" + index);
 
 	back.style =
-		"transform: translateX(-50%) translateY(-50%) rotateY(-180deg); z-index: 51; transform-origin: center 0px;";
+		"transform: translateX(-50%) translateY(-50%) rotateY(-180deg); z-index: " +
+		(deck.deck.length - index) +
+		"; transform-origin: center 0px;";
 	front.style =
-		"transform: translateX(-50%) translateY(-50%) rotateY(0deg); z-index: 51; transform-origin: center 0px;";
+		"transform: translateX(-50%) translateY(-50%) rotateY(0deg); z-index: " +
+		(deck.deck.length - index) +
+		"; transform-origin: center 0px;";
 }
 function setupNewTopCard() {
 	function setupEventListener(index) {
 		let container = document.getElementById("container" + index);
 
-		setTimeout(() => {
+		container.addEventListener("click", () => {
+			if (!wait) {
+				showNextCard();
+				wait = true;
+				setTimeout(() => {
+					wait = false;
+				}, 500);
+			}
+		});
+		/* setTimeout(() => {
 			// Wait a bit to avoid some nasty bugs.
-			container.addEventListener("click", showNextCard);
-		}, 500);
+		}, 500); */
 	}
 	function setupAnimationOfNextCard(currCard) {
 		if (currCard + 1 >= deck.deck.length) return;
